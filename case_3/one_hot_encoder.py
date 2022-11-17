@@ -31,11 +31,13 @@ if __name__ == '__main__':
 
     cities = ['cat', 'dog', 'mouse', 'turtle', 'dog', 'mouse']
     exp_transformed_cities = [
-        ('Moscow', [0, 0, 1]),
-        ('New York', [0, 1, 0]),
-        ('Moscow', [0, 0, 1]),
-        ('London', [1, 0, 0]),
+                            ('cat', [0, 0, 0, 1]),
+                            ('dog', [0, 0, 1, 0]),
+                            ('mouse', [0, 1, 0, 0]),
+                            ('turtle', [1, 0, 0, 0]),
+                            ('dog', [0, 0, 1, 0]),
+                            ('mouse', [0, 1, 0, 0])
     ]
     transformed_cities = fit_transform(cities)
     pprint(transformed_cities)
-    # assert transformed_cities == exp_transformed_cities
+    assert transformed_cities == exp_transformed_cities

@@ -23,8 +23,19 @@ class TestFitTransform(unittest.TestCase):
                     ('Moscow', [0, 1])]
         self.assertEqual(actual, expected)
 
-    def test_animals(self):
+    def test_animals_1(self):
         actual = fit_transform(
             ['cat', 'dog', 'mouse', 'turtle', 'dog', 'mouse']
             )
         self.assertIn(('turtle', [1, 0, 0, 0]), actual)
+    
+    def test_animals_2(self):
+        actual = fit_transform(
+            ['cat', 'dog', 'mouse', 'turtle', 'dog', 'mouse']
+            )
+        with self.assertRaises(AttributeError):
+            actual.fit_transform(1337)
+
+    if __name__ == '__main__':
+        unittest.main()
+        """python -m unittest -v"""
